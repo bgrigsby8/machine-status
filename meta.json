@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dl.viam.dev/module.schema.json",
+  "module_id": "brad-grigsby:machine-status",
+  "visibility": "public",
+  "url": "",
+  "description": "Modular sensor component: online-status",
+  "models": [
+    {
+      "api": "rdk:component:sensor",
+      "model": "brad-grigsby:machine-status:online-status",
+      "short_description": "Provide a short (100 characters or less) description of this model here",
+      "markdown_link": "README.md#model-brad-grigsbymachine-statusonline-status"
+    }
+  ],
+  "applications": null,
+  "entrypoint": "./run.sh",
+  "first_run": "",
+  "build": {
+    "build": "./build.sh",
+    "setup": "./setup.sh",
+    "path": "dist/archive.tar.gz",
+    "arch": [
+      "linux/amd64",
+      "linux/arm64"
+    ]
+  }
+}
