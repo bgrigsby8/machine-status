@@ -2,14 +2,13 @@
   "$schema": "https://dl.viam.dev/module.schema.json",
   "module_id": "brad-grigsby:machine-status",
   "visibility": "public",
-  "url": "",
+  "url": "https://github.com/bgrigsby8/machine-status",
   "description": "Modular sensor component: online-status",
   "models": [
     {
       "api": "rdk:component:sensor",
       "model": "brad-grigsby:machine-status:online-status",
-      "short_description": "Provide a short (100 characters or less) description of this model here",
-      "markdown_link": "README.md#model-brad-grigsbymachine-statusonline-status"
+      "short_description": "Sensor component that gives you the online status of a machine."
     }
   ],
   "applications": null,

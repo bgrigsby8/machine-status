@@ -1,4 +1,5 @@
-from typing import (Any, ClassVar, Dict, Final, List, Mapping, Optional,
+import requests
+from typing import (Any, ClassVar, Dict, List, Mapping, Optional,
                     Sequence)
 
 from typing_extensions import Self
@@ -65,8 +66,15 @@ class OnlineStatus(Sensor, EasyResource):
         timeout: Optional[float] = None,
         **kwargs
     ) -> Mapping[str, SensorReading]:
-        self.logger.error("`get_readings` is not implemented")
-        raise NotImplementedError()
+        try:
+            response = requests.get("https://app.viam.com", timeout=2)
+            if response.status_code == 200:
+                return {"online-status": True}
+            else:
+                self.logger.debug(f"Received non-200 response code {response.status_code}")
+                return {"online-status": False}
+        except requests.RequestException:
+            return {"online-status": None}
 
     async def do_command(
         self,

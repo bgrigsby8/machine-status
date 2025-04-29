@@ -1,4 +1,4 @@
-
+requests
 viam-sdk==0.45.2
 
 typing-extensions
